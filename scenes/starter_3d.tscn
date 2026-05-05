@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dfd3g71dfnf5g" path="res://resources/Music/Game_Theme_Loop_120.ogg" id="6_qr6qn"]
 [ext_resource type="AudioStream" uid="uid://igh60yi8yvo6" path="res://resources/Music/Game_Theme_Loop_140.ogg" id="7_8jr5k"]
 [ext_resource type="PackedScene" uid="uid://ci56d0qsgpiiy" path="res://scenes/audio.tscn" id="8_5chnm"]
-[ext_resource type="Script" path="res://scenes/music_manager.gd" id="8_rkah8"]
+[ext_resource type="Script" uid="uid://brpnve1n4rsk3" path="res://scenes/music_manager.gd" id="8_rkah8"]
 [ext_resource type="PackedScene" uid="uid://dt2m1osxcfcry" path="res://scenes/coconut_item_pile_spawner.tscn" id="10_7oiso"]
 [ext_resource type="PackedScene" uid="uid://cbd32f1bc1uwj" path="res://scenes/baby_mermaid_item_pile_spawner.tscn" id="11_w266b"]
 [ext_resource type="PackedScene" uid="uid://dynoodpdky3ky" path="res://scenes/krab_item_pile_spawner.tscn" id="12_0onai"]

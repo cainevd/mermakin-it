@@ -89,6 +89,11 @@
 [ext_resource type="AudioStream" uid="uid://doc5d57425d7k" path="res://resources/Cookin-sounds/Cooking/Pick_Up_Crab.ogg" id="87_3ug1q"]
 [ext_resource type="AudioStream" uid="uid://v0ixtmsi4yu7" path="res://resources/Endings/Win_Game.ogg" id="88_3ug1q"]
 [ext_resource type="AudioStream" uid="uid://bmux8myu8m21x" path="res://resources/Endings/Lose_Game.ogg" id="89_7k56w"]
+[ext_resource type="AudioStream" uid="uid://gpu0yky3cvsr" path="res://assets/Audio/Cooking/Food_Cook_Start.mp3" id="90_fasog"]
+[ext_resource type="AudioStream" uid="uid://bwby487mpeo1e" path="res://assets/Audio/Cooking/Food_Timer_Start.mp3" id="91_4dtnr"]
+[ext_resource type="AudioStream" uid="uid://bi48ugwj2osa8" path="res://assets/Audio/Cooking/Food_Timer_Loop_Done.mp3" id="92_frnfl"]
+[ext_resource type="AudioStream" uid="uid://dx4pfnjxcb2rd" path="res://assets/Audio/Environment/Ambiences/Ambience_Beach_Loop.wav" id="93_gefff"]
+[ext_resource type="AudioStream" uid="uid://6w0dviwfsiy" path="res://assets/Audio/Buttons/Button_Select.mp3" id="94_hp8qd"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_qicqv"]
 
@@ -261,6 +266,18 @@ playback_mode = 1
 streams_count = 1
 stream_0/stream = ExtResource("89_7k56w")
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_e78ff"]
+loop = false
+fade_time = 0.0
+stream_count = 2
+stream_0 = ExtResource("90_fasog")
+stream_1 = ExtResource("91_4dtnr")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hr5dn"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("94_hp8qd")
+
 [node name="AudioManager" type="AudioStreamPlayer3D" unique_id=268274660]
 stream = SubResource("AudioStreamPolyphonic_qicqv")
 playback_type = 1
@@ -331,3 +348,17 @@ stream = SubResource("AudioStreamRandomizer_frnfl")
 [node name="Audio3D_lose" type="AudioStreamPlayer3D" parent="." unique_id=1000255498]
 stream = SubResource("AudioStreamRandomizer_gefff")
 volume_db = 9.927
+
+[node name="Audio3D_Cook_Start" type="AudioStreamPlayer3D" parent="." unique_id=1941126808]
+stream = SubResource("AudioStreamPlaylist_e78ff")
+
+[node name="Audio3D_Cook_Timer_Loop" type="AudioStreamPlayer3D" parent="." unique_id=140770031]
+stream = ExtResource("92_frnfl")
+
+[node name="Audio3D_Beach_AMB" type="AudioStreamPlayer3D" parent="." unique_id=1313060437]
+stream = ExtResource("93_gefff")
+
+[node name="Audio3D_Button" type="AudioStreamPlayer3D" parent="." unique_id=247026554]
+stream = SubResource("AudioStreamRandomizer_hr5dn")
+attenuation_model = 3
+volume_db = 20.0

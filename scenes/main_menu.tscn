@@ -5,8 +5,10 @@
 [ext_resource type="Shader" uid="uid://b6r1rfexjtmk0" path="res://resources/beach.gdshader" id="3_beach_shader"]
 [ext_resource type="Texture2D" uid="uid://byga8n1p2dl33" path="res://assets/Art/Backgrounds/Start game.png" id="4_start_button"]
 [ext_resource type="AudioStream" uid="uid://bc0nlukm3vclk" path="res://resources/Music/Game_Title_Theme_120_HalfBarPickup.ogg" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://g1kf26pp0hr2" path="res://scenes/start_button.gd" id="5_jk1qb"]
 [ext_resource type="AudioStream" uid="uid://dsf8vdjl0f2vw" path="res://resources/Music/Game_Title_Theme_120_Loop.ogg" id="6_oa1go"]
 [ext_resource type="Script" uid="uid://uj6ibc36o8kp" path="res://scenes/main_menu_audio_stream_player_3d.gd" id="6_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://ci56d0qsgpiiy" path="res://scenes/audio.tscn" id="9_5dd4i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_menu_bg"]
 render_priority = 0
@@ -84,6 +86,7 @@ texture_normal = ExtResource("4_start_button")
 texture_pressed = ExtResource("4_start_button")
 texture_hover = ExtResource("4_start_button")
 texture_focused = ExtResource("4_start_button")
+script = ExtResource("5_jk1qb")
 
 [node name="FadeRect" type="ColorRect" parent="Ui" unique_id=974748776]
 anchors_preset = 15
@@ -98,3 +101,6 @@ color = Color(1, 1, 1, 0)
 stream = SubResource("AudioStreamInteractive_rtw2f")
 volume_db = 12.263
 script = ExtResource("6_rtw2f")
+
+[node name="AudioManager" parent="." unique_id=268274660 instance=ExtResource("9_5dd4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47532523, 0, -0.20844936)
