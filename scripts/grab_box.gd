@@ -62,6 +62,8 @@ func _spawn_item() -> void:
 		audio_manager.play_sound("Audio3D_food_Coconut")
 	if item_scene.resource_path == "res://scenes/items/urchin.tscn":
 		audio_manager.play_sound("Audio3D_food_Urchin")
+	if item_scene.resource_path == "res://scenes/items/baby_mermaid.tscn":
+		audio_manager.play_sound("Audio3D_food_Baby")
 
 	item.add_to_group("pickup")
 	item.add_to_group(_spawn_group)

@@ -8,6 +8,9 @@ const FADE_OUT_DURATION := 0.5
 
 @onready var fade_rect: ColorRect = $FadeLayer/FadeRect
 @onready var pause_menu: PauseMenu = $PauseMenu
+@onready var audio_manager: AudioStreamPlayer3D = $Camera3D/AudioManager
+
+
 
 var _is_transitioning: bool = false
 var _can_pause: bool = false
@@ -36,6 +39,7 @@ func _ready() -> void:
 		await _fade_from_white()
 
 	_can_pause = true
+
 
 
 func _on_you_win_requested() -> void:

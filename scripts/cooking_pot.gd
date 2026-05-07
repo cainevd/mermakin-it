@@ -45,6 +45,8 @@ enum CauldronMood {
 @onready var sprite_3d: Sprite3D = $Sprite3D
 @onready var texture_swap_timer: Timer = $TextureSwapTimer
 
+@onready var audio_manager: AudioStreamPlayer3D = $"../Camera3D/AudioManager"
+
 var _entries: Array[PotItemEntry] = []
 var _is_serving: bool = false
 var _sprite_material: ShaderMaterial
@@ -142,7 +144,10 @@ func _has_item(item: RigidBody3D) -> bool:
 func _accept_item(item: RigidBody3D) -> bool:
 	if _is_serving:
 		return false
-
+	
+	if audio_manager:
+		audio_manager.play_sound("Audio3D_Cook_Start")
+		
 	var entry := PotItemEntry.new(
 		item,
 		_get_time_seconds()

@@ -27,7 +27,6 @@ buses/default_bus_layout="uid://gonqwn0pme64"
 
 Global="*res://scripts/autoloads/Global.gd"
 MusicManager="*uid://brpnve1n4rsk3"
-MCPInputHandler="*res://addons/godot_mcp/mcp_input_handler.gd"
 
 [display]
 
